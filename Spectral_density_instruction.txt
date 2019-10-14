@@ -1,0 +1,78 @@
+input file creation instruction
+
+#input filename: 
+complexsp.txt
+no empty lines in input file 
+
+define number of spectrum in input file:
+#number of spectrum
+2
+number of points in spectral density array:
+#Number of points
+
+100
+Initial frequency
+ from which starts and step size:
+#Initial frequency
+
+0
+#Frequency step
+
+10
+#next line defines spectral density name after which in the next line parameters:
+drude
+100 0 0 0
+#for calculating more than one spectral density after defining one spectral 
+#density put other spectral density name and parameters
+drude
+50 20 0 0
+superohmic
+16 3 0.6 0
+
+#spectral density types:
+drude
+ohmic
+superohmic
+lognormal
+powerfunction
+
+#parameters
+drude
+first parameter is cutoff frequency, second parameter is amplitude.
+ohmic
+first parameter is cutoff frequency,  second parameter is amplitude.
+superohmic
+first parameter is cutoff frequency, second parameter is alpha which can be only 2 or 3, third parameter is amplitude.
+lognormal
+first parameter is cutoff frequency, second parameter is deviation,third parameter is amplitude.
+powerfunction
+first parameter is amplitude, second parameter is KbT (for fourier transform), third parameter is power degree, fourth parameter is delay parameter .
+
+#use of spectral density 
+for using drude, ohmic, superohmic and powerfunction spectral density multiply by reorganization energy (amplitude).
+for use of lognormal multiply by Huang-Rhys factor(coupling constant).
+
+#input units cm-1 for all calculations.
+
+#example:
+
+#number of spectrum
+4
+#Number of points
+
+1000000
+#Initial frequency
+
+0.0
+
+#Frequency step
+
+0.03141592653
+fractionalfunction
+20 200 0.5 0.0125
+drude
+50 20 0 0
+superohmic
+16 3 0.6 0
+lognormal
+24 0.85 0.58 0
